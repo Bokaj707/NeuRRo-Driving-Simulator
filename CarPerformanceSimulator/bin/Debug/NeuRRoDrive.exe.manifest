@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NeuRRoDrive.exe" size="78744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NeuRRoDrive.exe" size="78784">
       <assemblyIdentity name="NeuRRoDrive" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>tegS3A7I76PzkXoeQEZ376KhDCA=</dsig:DigestValue>
+        <dsig:DigestValue>qUMooSp7qiXWrUJ1G//tPF0tpj4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

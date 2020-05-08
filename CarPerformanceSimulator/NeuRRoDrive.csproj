@@ -61,10 +61,10 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>756DBD0C93AD3640E04466CA3E12EE7B795756FA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F6171A353C9557F5530A74896D2CE21CA690A975</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CarPerformanceSimulator_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NeuRRoDrive_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -186,6 +186,7 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="CarPerformanceSimulator_TemporaryKey.pfx" />
+    <None Include="NeuRRoDrive_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

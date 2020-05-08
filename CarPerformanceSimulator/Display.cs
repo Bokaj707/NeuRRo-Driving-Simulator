@@ -941,6 +941,7 @@ namespace CarPerformanceSimulator
 
                 foreach (Key key in pressedKeys)
                 {
+                    /*
                     if (key.Equals(Key.R))
                     {
                         driveGear = 0;
@@ -986,8 +987,45 @@ namespace CarPerformanceSimulator
                         degree = 10 * ((double)steeringSensitivity / 50.0);
                         pressed[2] = true;
                         continue;
+                    }*/
+
+                    if ((key.Equals(Key.DownArrow) || key.Equals(Key.Down)) && accelValue < AXIS_MAX + 500)
+                    {
+                        if (velocity > 0)
+                        {
+                            accelValue = 0;
+                            brakeValue = brakeMax;
+                            pressed[1] = true;
+                            continue;
+                        }
                     }
+                    else if ((key.Equals(Key.UpArrow) || key.Equals(Key.Up)) && velocity < 120 && accelValue < AXIS_MAX - 500)
+                    {
+                        driveGear = 1;
+                        reverseGear = 0;
+                        pressed[0] = true;
+                        accelValue = 50000;
+                        continue;
+                    }
+
+
+
+
+                    if (key.Equals(Key.LeftArrow) || key.Equals(Key.Left))
+                    {
+                        degree = -10 * ((double)steeringSensitivity / 50.0);
+                        pressed[2] = true;
+                        continue;
+                    }
+                    else if (key.Equals(Key.RightArrow) || key.Equals(Key.Right))
+                    {
+                        degree = 10 * ((double)steeringSensitivity / 50.0);
+                        pressed[2] = true;
+                        continue;
+                    }
+
                 }
+                
                 if (!pressed[0])
                 {
                     driveGear = 0;
@@ -1353,6 +1391,10 @@ namespace CarPerformanceSimulator
             }
             else
                 return 1;
+        }
+
+        public int getConnectedJoysticks() {
+            return joystickInterface.getNumJoysticks();
         }
 
         private int getAxis(string axis)
