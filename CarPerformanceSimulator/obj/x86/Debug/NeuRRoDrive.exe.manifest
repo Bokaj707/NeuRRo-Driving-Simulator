@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NeuRRoDrive.exe" size="78744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NeuRRoDrive.exe" size="79240">
       <assemblyIdentity name="NeuRRoDrive" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>tegS3A7I76PzkXoeQEZ376KhDCA=</dsig:DigestValue>
+        <dsig:DigestValue>nLihJjCSfTUo9/t3lXpn2bE9ANE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,13 +98,13 @@
       <dsig:DigestValue>T9JI+v489GTNTPIEPx8LaHHv1N8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="COPYING.txt" size="35822">
+  <file name="COPYING.txt" size="35149">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1Q3ooTgrvjhOYJsV0LLSqi6Wxs8=</dsig:DigestValue>
+      <dsig:DigestValue>IwzGJakZhsuot+zUnZqhCw3m6rQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="deer.jpg" size="26603">
@@ -152,13 +152,13 @@
       <dsig:DigestValue>qmufJSTLB7LEsnCO+utXqLEaDjc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="NeuRRoDrive.exe.config" size="219">
+  <file name="NeuRRoDrive.exe.config" size="214">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>4SrEqCatZzC0qhL+u0cqk30V2xA=</dsig:DigestValue>
+      <dsig:DigestValue>amvPIZhzs024tCgV/RQBL4lm6Tw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="pedestrian.jpg" size="26490">

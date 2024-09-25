@@ -78,6 +78,13 @@ namespace CarPerformanceSimulator
 
         private void InputSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // prevent crashes if no joystick - just block changing to joystick altogether
+            if (Manager.GetDevices(DeviceClass.GameControl, EnumDevicesFlags.AttachedOnly).Count == 0) {
+                this.InputSelect.SelectedIndex = 1;
+                return;
+            }
+
             PollingTimer.Enabled = false;
             mainDisplay.setInputSource(this.InputSelect.SelectedIndex);
             if (this.InputSelect.SelectedIndex == 0)

@@ -129,15 +129,17 @@ namespace CarPerformanceSimulator
                 soundInstance.Volume = (float)(0.5 * (90 + (double)velocity) / 180.0);
                 soundInstance.Play();
             }
-
+            
             if (reverseGear == 0 && driveGear == 0)
             {
                 neutral = true;
                 dataReadout.Gear.Text = "N";
                 selectedGear = 1;
             }
+            
             if (driveGear != 0)
             {
+                neutral = false;
                 if (selectedGear == 1 && throttle < 0.1 && velocity < 2.2 && brakeValue < 0.1)
                 {
                     throttle = 0.5;

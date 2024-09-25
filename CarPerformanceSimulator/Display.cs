@@ -194,6 +194,9 @@ namespace CarPerformanceSimulator
         double previous;
         double lag;
 
+        bool pressedUpLastFrame = false;
+        bool pressedDownLastFrame = false;
+
         public Display()
         {
             InitializeComponent();
@@ -939,8 +942,13 @@ namespace CarPerformanceSimulator
                     pressed[i] = false;
                 }
 
+                bool pressedUpThisFrame = false;
+                bool pressedDownThisFrame = false;
+
+
                 foreach (Key key in pressedKeys)
                 {
+                    /*
                     if (key.Equals(Key.R))
                     {
                         driveGear = 0;
@@ -986,8 +994,69 @@ namespace CarPerformanceSimulator
                         degree = 10 * ((double)steeringSensitivity / 50.0);
                         pressed[2] = true;
                         continue;
+                    }*/
+
+                    // This behavior works as follows: You have to be stationary to change from D to R or vice versa.
+                    // When stationary, you have to release and press the desired key (up or down arrow) again.
+                    // This ensures you don't accidentally go in reverse when you don't want to.
+                    if ((key.Equals(Key.DownArrow) || key.Equals(Key.Down)) && accelValue < AXIS_MAX + 500)
+                    {
+                        pressedDownThisFrame = true;
+
+                        if (velocity <= 0 && (reverseGear == 1 || !pressedDownLastFrame)) {
+                            driveGear = 0;
+                            reverseGear = 1;
+                            pressed[0] = true;
+                            accelValue = 50000;
+                            continue;
+                        }
+                        else
+                        {
+                            accelValue = 0;
+                            brakeValue = brakeMax;
+                            pressed[1] = true;
+                            continue;
+                        }
                     }
+                    else if ((key.Equals(Key.UpArrow) || key.Equals(Key.Up)) && velocity < 120 && accelValue < AXIS_MAX - 500)
+                    {
+                        pressedUpThisFrame = true;
+
+                        if (velocity >= 0 && (driveGear == 1 || !pressedUpLastFrame))
+                        {
+                            driveGear = 1;
+                            reverseGear = 0;
+                            pressed[0] = true;
+                            accelValue = 50000;
+                            continue;
+                        }
+                        else {
+                            accelValue = 0;
+                            brakeValue = brakeMax;
+                            pressed[1] = true;
+                            continue;
+                        }
+
+                    }
+
+                    if (key.Equals(Key.LeftArrow) || key.Equals(Key.Left))
+                    {
+                        degree = -10 * ((double)steeringSensitivity / 50.0);
+                        pressed[2] = true;
+                        continue;
+                    }
+                    else if (key.Equals(Key.RightArrow) || key.Equals(Key.Right))
+                    {
+                        degree = 10 * ((double)steeringSensitivity / 50.0);
+                        pressed[2] = true;
+                        continue;
+                    }
+
                 }
+
+                pressedUpLastFrame = pressedUpThisFrame;
+                pressedDownLastFrame = pressedDownThisFrame;
+
                 if (!pressed[0])
                 {
                     driveGear = 0;
@@ -1353,6 +1422,10 @@ namespace CarPerformanceSimulator
             }
             else
                 return 1;
+        }
+
+        public int getConnectedJoysticks() {
+            return joystickInterface.getNumJoysticks();
         }
 
         private int getAxis(string axis)

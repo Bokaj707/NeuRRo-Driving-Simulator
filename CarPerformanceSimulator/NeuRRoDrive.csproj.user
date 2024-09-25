@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-    <PublishUrlHistory>D:\GitHub\NeuRRo\NeuRRoDriveInstall\|D:\GitHub\NeuRRo\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\hhgao\Downloads\NeuRRoDrive-Test\NeuRRoDrive-Test\|C:\Users\User\Documents\Rodseth\GIT\NeuRRo\NeuRRoDrive\Install\|D:\GitHub\NeuRRo\NeuRRoDriveInstall\|D:\GitHub\NeuRRo\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

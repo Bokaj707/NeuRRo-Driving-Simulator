@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\User\Documents\Rodseth\GIT\NeuRRo\NeuRRoDrive\Install\</PublishUrl>
+    <PublishUrl>C:\Users\hhgao\Downloads\NeuRRoDrive-Test\NeuRRoDrive-Test\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,10 +61,10 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>756DBD0C93AD3640E04466CA3E12EE7B795756FA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>96CBF436034F4CE47B37121919A2DB222380E3C5</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CarPerformanceSimulator_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NeuRRoDrive_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -186,6 +186,8 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="CarPerformanceSimulator_TemporaryKey.pfx" />
+    <None Include="NeuRRoDrive_1_TemporaryKey.pfx" />
+    <None Include="NeuRRoDrive_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -248,6 +250,11 @@
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
       <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="XNA.Framework">
+      <Visible>False</Visible>
+      <ProductName>Update Consent Dialog</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
