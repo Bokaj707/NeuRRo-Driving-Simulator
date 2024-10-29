@@ -727,7 +727,14 @@ namespace CarPerformanceSimulator
 
         private void checkIfGasMomentTimersTriggered()
         {
-            if (gasMomentReleaseTime == 0 && (rtStartAccelPosition - accelValue) > ((double)joyAxisMax[pedalJoy] * 0.1))
+            if (selectedInput == (int)inputSelection.keyboard)
+            {
+                if (gasMomentReleaseTime == 0 && velocity > 0 && pressedUpLastFrame == false)
+                {
+                    gasMomentReleaseTime = stopwatch.ElapsedMilliseconds;
+                }
+            }
+            else if (gasMomentReleaseTime == 0 && (rtStartAccelPosition - accelValue) > ((double)joyAxisMax[pedalJoy] * 0.1))
             {
                 gasMomentReleaseTime = stopwatch.ElapsedMilliseconds;
             }
@@ -735,7 +742,15 @@ namespace CarPerformanceSimulator
 
         private void checkIfGasTotalTimersTriggered()
         {
-            if (gasTotalReleaseTime == 0 && !isAccel)
+            if (selectedInput == (int)inputSelection.keyboard)
+            {
+                if (gasTotalReleaseTime == 0 && velocity > 0 && pressedUpLastFrame == false)
+                {
+                    gasTotalReleaseTime = stopwatch.ElapsedMilliseconds;
+                    RTgas = true;
+                }
+            }
+            else if (gasTotalReleaseTime == 0 && !isAccel)
             {
                 gasTotalReleaseTime = stopwatch.ElapsedMilliseconds;
                 RTgas = true;
